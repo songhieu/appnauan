@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-navbar>
+        <ion-searchbar (ionInput)="getItems($event)" (keyup.enter)="enterkey()">></ion-searchbar>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+  <ion-list [virtualScroll]="items">
+    <ion-item (click)="clicktopage(an.id)" *virtualItem="let an">
+      <ion-thumbnail item-left>
+        <img src="img/{{an.id_post}}.jpg">
+      </ion-thumbnail>
+      <h2>{{an.name}}</h2>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
